@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projection Proxy</title>
+  <script src="/scram/scramjet.all.js"></script>
+  <script src="/baremux/index.js"></script>
+  <link rel="stylesheet" href="/proxy/index.css" />
+  <script src="/proxy/register-sw.js" defer></script>
+  <script src="/proxy/search.js" defer></script>
+  <script src="/proxy/index.js" defer></script>
+</head>
+<body>
+  <header class="browser-chrome">
+    <div class="tabs-toolbar">
+      <div class="tab-row" id="tab-row" role="tablist" aria-label="Browser tabs"></div>
+      <button id="new-tab" class="new-tab" title="New tab" aria-label="New tab">+</button>
+    </div>
+    <div class="toolbar">
+      <button id="back" title="Back" aria-label="Back" disabled>←</button>
+      <button id="forward" title="Forward" aria-label="Forward" disabled>→</button>
+      <button id="reload" title="Reload" aria-label="Reload">↻</button>
+      <button id="home" title="Home" aria-label="Home">⌂</button>
+      <form id="sj-form" class="address-form">
+        <input id="sj-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
+        <input id="sj-address" type="text" placeholder="Search or enter website address" autocomplete="url" />
+        <button type="submit" class="go-button">Go</button>
+      </form>
+    </div>
+  </header>
+  <main id="browser-stage">
+    <section id="home-page">
+      <div class="brand-mark">S</div>
+      <h1>Projection Proxy</h1>
+      <p>Search the web or choose a go-to site.</p>
+      <form id="home-form" class="home-search">
+        <input id="home-address" type="text" placeholder="Search or enter website address" autocomplete="url" />
+        <button type="submit">Go</button>
+      </form>
+      <nav class="quick-categories" aria-label="Go-to site categories" role="tablist">
+        <button class="category-button selected" data-category="popular" role="tab" aria-selected="true">Popular</button>
+        <button class="category-button" data-category="social" role="tab" aria-selected="false">Social</button>
+        <button class="category-button" data-category="streaming" role="tab" aria-selected="false">Streaming</button>
+        <button class="category-button" data-category="search" role="tab" aria-selected="false">Search</button>
+        <button class="category-button" data-category="tools" role="tab" aria-selected="false">Tools</button>
+      </nav>
+      <section class="quick-sites" id="quick-sites" aria-label="Go-to sites">
+        <button class="quick-site" data-category="popular" data-url="https://www.youtube.com"><span class="site-icon youtube">▶</span><span>YouTube</span></button>
+        <button class="quick-site" data-category="popular social" data-url="https://www.reddit.com"><span class="site-icon reddit">●</span><span>Reddit</span></button>
+        <button class="quick-site" data-category="popular social" data-url="https://discord.com/app"><span class="site-icon discord">◕</span><span>Discord</span></button>
+        <button class="quick-site" data-category="popular social" data-url="https://x.com"><span class="site-icon xsite">𝕏</span><span>Twitter / X</span></button>
+        <button class="quick-site" data-category="social" data-url="https://www.tiktok.com"><span class="site-icon tiktok">♪</span><span>TikTok</span></button>
+        <button class="quick-site" data-category="social" data-url="https://www.instagram.com"><span class="site-icon instagram">◎</span><span>Instagram</span></button>
+        <button class="quick-site" data-category="popular streaming" data-url="https://open.spotify.com"><span class="site-icon spotify">≋</span><span>Spotify</span></button>
+        <button class="quick-site" data-category="streaming" data-url="https://www.twitch.tv"><span class="site-icon twitch">▣</span><span>Twitch</span></button>
+        <button class="quick-site" data-category="streaming" data-url="https://www.netflix.com"><span class="site-icon netflix">N</span><span>Netflix</span></button>
+        <button class="quick-site" data-category="streaming" data-url="https://www.primevideo.com"><span class="site-icon prime">▶</span><span>Prime Video</span></button>
+        <button class="quick-site" data-category="search" data-url="https://www.google.com"><span class="site-icon google">G</span><span>Google</span></button>
+        <button class="quick-site" data-category="search" data-url="https://duckduckgo.com"><span class="site-icon duck">◉</span><span>DuckDuckGo</span></button>
+        <button class="quick-site" data-category="tools" data-url="https://translate.google.com"><span class="site-icon tools">文</span><span>Translate</span></button>
+        <button class="quick-site" data-category="tools" data-url="https://www.photopea.com"><span class="site-icon tools">✎</span><span>Photopea</span></button>
+        <button class="quick-site" data-category="tools" data-url="https://www.speedtest.net"><span class="site-icon tools">↗</span><span>Speedtest</span></button>
+      </section>
+      <p id="sj-error" role="status"></p><pre id="sj-error-code"></pre>
+    </section>
+  </main>
+</body>
+</html>

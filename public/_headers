@@ -1,0 +1,7 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' blob: https:; font-src 'self' data:; connect-src 'self' wss: https:; frame-src 'self' https://scramjet-app-v2ib.onrender.com https://nightbrowse-browser.dogeeats531.workers.dev https://vidking.ws https://www.vidking.ws https://player.vidking.ws https://vidsrc.sh https://embedwave.cc https://cinesrc.st https://vidlink.pro https://vidfast.vc https://embedmaster.link https://embedmaster.com https://vidcore.org https://mikaza.buzz https://*.mikaza.buzz https://www.youtube-nocookie.com https://www.youtube.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests

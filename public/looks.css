@@ -1,0 +1,71 @@
+/* ============ Looks: pick one in Settings. Normal mode only (anime and manga keep their own style). ============ */
+body[data-look="youtube"]{--lk-bg:#0f0f0f;--lk-accent:#ff0000;--lk-btn:#ff0000;--lk-btntx:#fff;--lk-r:12px;--lk-nav:#0f0f0f}
+body[data-look="hulu"]{--lk-bg:#0b0c10;--lk-accent:#1ce783;--lk-btn:#1ce783;--lk-btntx:#06130c;--lk-r:6px;--lk-nav:#0b0c10}
+body[data-look="paramount"]{--lk-bg:#06122b;--lk-accent:#2f7bff;--lk-btn:#0064ff;--lk-btntx:#fff;--lk-r:8px;--lk-nav:#0a1c45}
+body[data-look="prime"]{--lk-bg:#0f171e;--lk-accent:#1a98ff;--lk-btn:#1a98ff;--lk-btntx:#fff;--lk-r:4px;--lk-nav:#16222d}
+body[data-look="disney"]{--lk-bg:#040714;--lk-accent:#4f8dff;--lk-btn:#2d6bff;--lk-btntx:#fff;--lk-r:10px;--lk-nav:#0a1030}
+body[data-look="max"]{--lk-bg:#0b0a14;--lk-accent:#a66bff;--lk-btn:#8b4dff;--lk-btntx:#fff;--lk-r:6px;--lk-nav:#120f22}
+body[data-look="apple"]{--lk-bg:#000;--lk-accent:#fff;--lk-btn:#fff;--lk-btntx:#000;--lk-r:22px;--lk-nav:#161616}
+body[data-look]:not(.anime):not(.mangahub){--sh-accent:var(--lk-accent)}
+body[data-look]:not(.anime):not(.mangahub):not(.light-mode){background:var(--lk-bg)}
+body[data-look]:not(.anime):not(.mangahub) .logo{color:var(--lk-accent)!important}
+body[data-look]:not(.anime):not(.mangahub) .navbar{background:linear-gradient(180deg,var(--lk-nav),transparent)}
+body[data-look]:not(.anime):not(.mangahub) .navbar.scrolled{background:var(--lk-nav)}
+body[data-look]:not(.anime):not(.mangahub) .hero::after{background:linear-gradient(0deg,var(--lk-bg) 0%,transparent 45%),linear-gradient(77deg,rgba(0,0,0,.7),transparent 65%)}
+body[data-look]:not(.anime):not(.mangahub) .btn-play,body[data-look]:not(.anime):not(.mangahub) .shd-play:not(.shd-sec){background:var(--lk-btn);color:var(--lk-btntx)}
+body[data-look]:not(.anime):not(.mangahub) .card,body[data-look]:not(.anime):not(.mangahub) .sh-card,body[data-look]:not(.anime):not(.mangahub) .sh-card img,body[data-look]:not(.anime):not(.mangahub) .sh-gt{border-radius:var(--lk-r)}
+body[data-look]:not(.anime):not(.mangahub) .nav-links a:hover,body[data-look]:not(.anime):not(.mangahub) .nav-links a.active{color:var(--lk-accent)}
+/* Hulu: centered tabs, bold */
+body[data-look="hulu"]:not(.anime) .navbar{justify-content:center;gap:30px}
+body[data-look="hulu"]:not(.anime) .nav-links a{font-weight:700;letter-spacing:.02em}
+/* Apple TV: light, big, centered pill nav */
+body[data-look="apple"]:not(.anime) .navbar{justify-content:center;gap:24px}
+body[data-look="apple"]:not(.anime) .row-title{font-weight:500;font-size:22px;letter-spacing:-.01em}
+body[data-look="apple"]:not(.anime) .hero-title{font-weight:600;letter-spacing:-.03em}
+/* Disney: glowing hover */
+body[data-look="disney"]:not(.anime) .sh-card:hover,body[data-look="disney"]:not(.anime) .card:hover{box-shadow:0 0 0 3px rgba(79,141,255,.75),0 12px 30px rgba(0,0,0,.6)}
+/* Max: bigger gradient hero button */
+body[data-look="max"]:not(.anime) .btn-play{background:linear-gradient(90deg,#8b4dff,#d04dff);color:#fff}
+/* Paramount: deep blue gradient page */
+body[data-look="paramount"]:not(.anime):not(.light-mode){background:linear-gradient(180deg,#0a1c45 0,#06122b 480px)}
+/* YouTube: left sidebar on computers */
+@media(min-width:821px){
+ body[data-look="youtube"]:not(.anime):not(.mangahub){padding-left:216px}
+ body[data-look="youtube"]:not(.anime):not(.mangahub) .navbar{position:fixed;top:0;left:0;bottom:0;right:auto;width:216px;height:100vh;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:16px 12px;gap:8px;background:#0f0f0f;overflow-y:auto;border-right:1px solid #272727}
+ body[data-look="youtube"]:not(.anime):not(.mangahub) .nav-links{display:flex!important;flex-direction:column;gap:2px;margin:10px 0}
+ body[data-look="youtube"]:not(.anime):not(.mangahub) .nav-links a{padding:10px 12px;border-radius:10px;font-size:14px;display:block}
+ body[data-look="youtube"]:not(.anime):not(.mangahub) .nav-links a:hover{background:#272727}
+ body[data-look="youtube"]:not(.anime):not(.mangahub) .nav-right{flex-direction:column;align-items:stretch;margin-top:auto;gap:6px}
+ body[data-look="youtube"]:not(.anime):not(.mangahub) .nav-links a{text-align:left}
+ body[data-look="youtube"]:not(.anime):not(.mangahub) .nav-right>*{align-self:flex-start;text-align:left}
+}
+
+/* ============ New components ============ */
+.sh-bell{position:relative;background:transparent;border:0;color:#e5e5e5;font-size:18px;cursor:pointer;padding:4px 6px;flex:none}
+.sh-bell b{position:absolute;top:-4px;right:-4px;background:#6d5efc;color:#fff;border-radius:10px;font-size:10px;line-height:1;padding:2px 5px;font-weight:800}
+.sh-live{font-size:12px;color:#cfcfcf;white-space:nowrap;flex:none;display:flex;align-items:center;gap:6px}
+.sh-live i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#35d36c;box-shadow:0 0 8px #35d36c}
+.sh-chk{display:flex;gap:8px;align-items:flex-start;margin:10px 0;font-size:14px;line-height:1.3}.sh-chk input{margin-top:3px}
+.sh-people{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;padding:0 4%}
+.sh-pc{display:flex;gap:12px;align-items:center;background:#1d1d22;border:1px solid #2d2d34;border-radius:12px;padding:12px;cursor:pointer;transition:transform .15s,border-color .15s;color:#fff}
+.sh-pc:hover{transform:translateY(-2px);border-color:var(--sh-accent,#6d5efc)}
+.sh-pc .su-av{flex:none;width:52px;height:52px}.sh-pc b{display:block;font-size:15px}.sh-pc small{color:#aaa;font-size:12px;display:block;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:140px}
+.su-av{width:72px;height:72px;border-radius:12px;overflow:hidden}.su-av svg,.su-av img{width:100%;height:100%;object-fit:cover;display:block}
+.su-head{display:flex;gap:14px;align-items:center;margin-bottom:10px}.su-head h2{margin:0}
+.su-bio{background:#16161a;border-radius:10px;padding:12px;margin:12px 0;font-size:14px;line-height:1.5;color:#ddd;white-space:pre-wrap}
+.su-w{display:flex;gap:10px;overflow-x:auto;padding:4px 0 8px}.su-w>div{flex:none;width:96px;cursor:pointer;font-size:12px;color:#ddd}.su-w img{width:96px;height:140px;object-fit:cover;border-radius:8px;background:#26262c;display:block;margin-bottom:4px}
+.sh-note-row{display:flex;gap:10px;align-items:center;justify-content:space-between;background:#1a1a1f;border:1px solid #2a2a32;border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14px;line-height:1.35}
+.sh-note-row.new{border-color:var(--sh-accent,#6d5efc)}.sh-note-row .acts{display:flex;gap:6px;flex:none}
+.sh-small.sh-yes{background:var(--sh-accent,#6d5efc);color:#fff;border-color:transparent}
+.pt-tabs{display:flex;gap:8px;margin:6px 0 12px}.pt-tabs button{flex:1;background:#26262c;color:#fff;border:1px solid #3a3a42;border-radius:8px;padding:9px;cursor:pointer;font-weight:700}.pt-tabs button.on{background:var(--sh-accent,#6d5efc);border-color:transparent}
+.pt-res{max-height:210px;overflow-y:auto;margin:8px 0}.pt-res .r{display:flex;gap:10px;align-items:center;padding:6px;border-radius:8px;cursor:pointer}.pt-res .r:hover{background:#26262c}.pt-res img{width:40px;height:58px;object-fit:cover;border-radius:5px;background:#333}
+.pt-pick{display:flex;gap:12px;align-items:center;background:#16161a;border-radius:10px;padding:10px;margin:10px 0}.pt-pick img{width:56px;height:80px;object-fit:cover;border-radius:6px;background:#333}
+.pt-pick input[type=number]{width:62px}
+.pl-members{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.pl-m{display:flex;gap:8px;align-items:center;background:#1c1c22;border-radius:999px;padding:4px 12px 4px 4px;font-size:13px}.pl-m .su-av{width:28px;height:28px;border-radius:50%}
+.pl-code{font-size:28px;letter-spacing:.2em;font-weight:900;text-align:center;background:#16161a;border-radius:10px;padding:10px;margin:8px 0}
+@media(max-width:700px){
+ .sh-box{width:94vw!important;max-width:94vw!important;max-height:88vh;overflow-y:auto}
+ .sh-people{grid-template-columns:1fr 1fr;gap:10px}.sh-pc{flex-direction:column;text-align:center}.sh-pc small{max-width:120px}
+ .sh-live{font-size:11px}
+}
+.sh-person-info{min-width:0;flex:1}.sh-person-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:8px}.sh-person-actions .sh-small{padding:5px 9px;font-size:12px}.sh-pc{cursor:default}.sh-pc .sh-person-info{cursor:pointer}
